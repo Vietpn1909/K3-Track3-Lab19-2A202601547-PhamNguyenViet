@@ -1,0 +1,16 @@
+Group,Metric,Flat RAG,GraphRAG,Analysis
+cross-doc,Comprehensiveness,3.5,5.0,GraphRAG significantly better.
+cross-doc,Faithfulness,3.5,5.0,GraphRAG significantly better.
+cross-doc,Multi-hop reasoning,3.0,5.0,GraphRAG significantly better.
+cross-doc,Latency (s),8.088,8.251,Flat RAG usually cheaper/faster.
+cross-doc,Token usage,2096.5,2535.0,Flat RAG usually cheaper/faster.
+factoid,Comprehensiveness,1.0,1.0,Both methods are close.
+factoid,Faithfulness,1.0,1.0,Both methods are close.
+factoid,Multi-hop reasoning,1.0,1.0,Both methods are close.
+factoid,Latency (s),2.218,10.138,Flat RAG usually cheaper/faster.
+factoid,Token usage,1705.0,1388.0,GraphRAG not more expensive.
+multi-hop,Comprehensiveness,3.0,3.0,Both methods are close.
+multi-hop,Faithfulness,3.0,3.0,Both methods are close.
+multi-hop,Multi-hop reasoning,3.0,3.0,Both methods are close.
+multi-hop,Latency (s),9.834,15.258,Flat RAG usually cheaper/faster.
+multi-hop,Token usage,2538.0,1846.0,GraphRAG not more expensive.

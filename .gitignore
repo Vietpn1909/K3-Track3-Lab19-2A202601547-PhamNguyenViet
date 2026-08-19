@@ -21,6 +21,7 @@ env/
 *.csv
 golden_dataset.csv
 !reports/*.csv
+!outputs/*.csv
 *.jsonl
 *.parquet
 *.pq
