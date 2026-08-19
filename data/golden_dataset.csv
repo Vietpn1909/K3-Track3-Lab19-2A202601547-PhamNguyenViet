@@ -1,0 +1,234 @@
+id,group,question,reference_answer,reference_evidence
+G01,factoid,Who was the CEO of Hugging Face in 2023?,Clement Delangue,Validate against instructor dump.
+G02,multi-hop,Which startups were founded by former Microsoft employees and later received investment from Google?,"<think>
+Here's a thinking process:
+
+1.  **Analyze User Question:** ""Which startups were founded by former Microsoft employees and later received investment from Google?""
+2.  **Analyze Constraints:** 
+   - Answer only from supplied context.
+   - Be concise but complete.
+   - Do not invent facts.
+   - Cite provenance inline as [chunk_id=...] whenever possible.
+   - If evidence is insufficient or conflicting, say so.
+3.  **Scan Context for Keywords:** 
+   - Keywords: ""startups"", ""founded"", ""former Microsoft employees"", ""investment"", ""Google""
+   - Context provided:
+     - GRAPH: Mentions IFI Techsolutions partnered with Microsoft, Microsoft developed Airband Initiative.
+     - VECTOR chunks:
+       - 89303f1ce1c8dbe989a7::c0000: Talks about companies creating computers/mobile devices, mentions ""10 biggest companies"".
+       - 0611dcc975c2cc291a1f::c0000: Mentions cloud computing stocks, Apple, Microsoft, Alphabet/Google, Amazon.
+       - 19320fc9b3bfcf0ed531::c0000: Mentions Russian tech companies, Google, Yandex.
+       - 356d8c89c509793982cc::c0000: Mentions mass layoffs at Google, Microsoft, Amazon, Meta.
+4.  **Evaluate Findings against Question:** 
+   - Does the context mention any startups founded by former Microsoft employees? No.
+   - Does the context mention any startups receiving investment from Google? No.
+   - The context only mentions Microsoft and Google in passing (partnerships, layoffs, stock mentions, market competition in Russia).
+5.  **Formulate Response:** 
+   - State clearly that the provided context does not contain information about startups founded by former Microsoft employees that received investment from Google.
+   - Follow constraints: concise, cite if possible (none applicable), state insufficient evidence.
+   - Draft: ""The provided context does not contain information about any startups founded by former Microsoft employees that later received investment from Google. Evidence is insufficient to answer the question.""
+6.  **Check Constraints:** 
+   - Answer only from supplied context? Yes.
+   - Concise but complete? Yes.
+   - Do not invent facts? Yes.
+   - Cite provenance? Not applicable, but I can note that the context lacks it.
+   - If evidence insufficient, say so? Yes.
+   - All constraints met. Output matches draft.✅
+</think>
+
+The provided context does not contain information about any startups founded by former Microsoft employees that later received investment from Google. Evidence is insufficient to answer the question.",TO_BE_FILLED_FROM_DATASET
+G03,cross-doc,Compare the direction of AI-related investments by Meta and Apple during 2023 using evidence from multiple articles.,"<think>
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+   - **Question:** Compare the direction of AI-related investments by Meta and Apple during 2023 using evidence from multiple articles.
+   - **Constraints:** Answer only from supplied context. Be concise but complete. Do not invent facts. Cite provenance inline as [chunk_id=...] whenever possible. If evidence is insufficient or conflicting, say so.
+
+2.  **Analyze Context:**
+   - **GRAPH:**
+     - `Solutions [Technology] -USES-> AI [Technology] | date=2023-08-27 | chunk=41bcc9438630e1ac3cd8::c0000 | evidence=AI powered software platform`
+     - `Apple [Company] -DEVELOPED-> Vision Pro [Technology] | date=2023-06-07 | chunk=77175bc7ffab3269c5f4::c0000 | evidence=Apple's new Vision Pro`
+   - **VECTOR:**
+     - `[chunk_id=d86748ec8a585ec8c3ec::c0000 | date=2023-09-19 | score=0.633]` Mentions a computer technology stock adding to strong AI revenue into 2024/2025 (Barclays). Doesn't specify company.
+     - `[chunk_id=968c0e4d2030e462eb2a::c0000 | date=2023-01-11 | score=0.611]` Mentions Apple and Meta earnings reports in early 2023, stocks crumbling, sales deteriorating. No mention of AI investments.
+     - `[chunk_id=c3abd66a20fd72dc538f::c0000 | date=2023-01-04 | score=0.569]` General statement about AI in 2023 moving from guarded walls to real-time info. No company specifics.
+     - `[chunk_id=fd4d593b30427f762d16::c0000 | date=2023-07-13 | score=0.566]` Mentions financial services/banking seeing AI as opportunity. Irrelevant to Meta/Apple.
+
+3.  **Evaluate Evidence against Question:**
+   - The question asks to compare the *direction of AI-related investments* by Meta and Apple during 2023.
+   - The provided context mentions Apple and Meta only in the context of stock performance and earnings reports in early 2023 [chunk_id=968c0e4d2030e462eb2a::c0000].
+   - It mentions Apple developing Vision Pro [chunk_id=77175bc7ffab3269c5f4::c0000], but doesn't explicitly link it to AI investments or direction.
+   - There is absolutely no information in the context about Meta's AI investments, Apple's AI investments, or a comparison of their investment directions in 2023.
+   - The context is insufficient to answer the question.
+
+4.  **Formulate Response (adhering to constraints):**
+   - State clearly that the provided context does not contain information about the direction of AI-related investments by Meta or Apple in 2023.
+   - Cite what is available (only mentions their stock/earnings performance and Apple's Vision Pro development) to show I checked.
+   - Conclude that evidence is insufficient.
+   - Keep it concise.
+   - Follow citation format.
+
+   Draft:
+   The provided context does not contain information regarding the direction of AI-related investments by Meta or Apple during 2023. The available text only notes that both companies faced deteriorating sales trends and stock declines in early 2023 [chunk_id=968c0e4d2030e462eb2a::c0000], and mentions Apple's development of the Vision Pro [chunk_id=77175bc7ffab3269c5f4::c0000], but does not discuss their AI investment strategies or directions. Therefore, evidence is insufficient to answer the question. 
+
+5.  **Self-Correction/Verification against constraints:**
+   - ""Answer only from supplied context."" -> Checked.
+   - ""Be concise but complete."" -> Checked.
+   - ""Do not invent facts."" -> Checked.
+   - ""Cite provenance inline as [chunk_id=...] whenever possible."" -> Checked.
+   - ""If evidence is insufficient or conflicting, say so."" -> Checked.
+   - The response strictly follows all constraints. No extra fluff. Directly addresses the lack of evidence. Matches the required format. Ready.✅
+   - One minor thing: The prompt says ""Cite provenance inline as [chunk_id=...] whenever possible."" I will ensure the format matches exactly.
+   - All good. Output matches draft. 
+   - Proceed. 
+   - Output Generation. 
+   - [Self-Correction/Refinement during thought]: I should make sure I explicitly state ""Evidence is insufficient"" as requested. The draft does. I will keep it tight.
+   - Final check of the context: No mention of Meta's AI investments. No mention of Apple's AI investments. Only general AI trends and stock performance. So the conclusion is solid.
+   - Output matches response.✅
+   - Proceeds. 
+   - [Output Generation] -> ""The provided context does not contain information regarding the direction of AI-related investments by Meta or Apple during 2023. The available text only notes that both companies faced deteriorating sales trends and stock declines in early 2023 [chunk_id=968c0e4d2030e462eb2a::c0000], and mentions Apple's development of the Vision Pro [chunk_id=77175bc7ffab3269c5f4::c0000], but does not discuss their AI investment strategies. Evidence is insufficient to answer the question."" -> Matches constraints perfectly.✅
+   - Output matches. 
+   - Done. 
+   - [Final Check of the Prompt]: ""Compare the direction of AI-related investments by Meta and Apple during 2023 using evidence from multiple articles."" -> Context has 4 vector chunks + 2 graph edges. None discuss AI investments for these companies. So ""insufficient"" is the only valid answer. All constraints met.✅
+   - Output Generation. 
+   - [Output] -> (See response)
+   - [Done.] 
+   - *Self-Correction/Note during generation prep*: I will strictly follow the exact citation format requested: `[chunk_id=...]`. I'll make sure it's inline. The draft does this. All good. 
+   - Proceeds. 
+   - [Output Generation] (matches the refined draft)✅
+   - ""The provided context does not contain information regarding the direction of AI-related investments by Meta or Apple during 2023. The available text only notes that both companies faced deteriorating sales trends and stock declines in early 2023 [chunk_id=968c0e4d2030e462eb2a::c0000], and mentions Apple's development of the Vision Pro [chunk_id=77175bc7ffab3269c5f4::c0000], but does not discuss their AI investment strategies or directions. Evidence is insufficient to answer the question."" -> Perfect.✅
+   - Output matches. 
+   - [Final Output Generation] (Proceeds)
+   - *(Note: I will ensure the exact chunk_id format is used as requested.)*
+   - All steps verified. Output matches response.✅
+   - [Done.] 
+   - [Output Generation] -> *Proceeds*
+</think>
+
+The provided context does not contain information regarding the direction of AI-related investments by Meta or Apple during 2023. The available text only notes that both companies faced deteriorating sales trends and stock declines in early 2023 [chunk_id=968c0e4d2030e462eb2a::c0000], and mentions Apple's development of the Vision Pro [chunk_id=77175bc7ffab3269c5f4::c0000], but does not discuss their AI investment strategies or directions. Evidence is insufficient to answer the question.",TO_BE_FILLED_FROM_DATASET
+G04,multi-hop,Find a company invested in by a major technology company that also developed a named AI technology; identify both relations and dates.,"<think>
+Here's a thinking process:
+
+1.  **Analyze User Question:**
+   - Find a company invested in by a major technology company.
+   - This company also developed a named AI technology.
+   - Identify both relations (investment, AI development) and dates.
+   - Constraints: Answer only from supplied context. Be concise but complete. Do not invent facts. Cite provenance inline as [chunk_id=...]. If evidence is insufficient or conflicting, say so.
+
+2.  **Analyze Context:**
+   - Chunk 1 (c3abd66a20fd72dc538f::c0000, 2023-01-04): General talk about AI moving from big tech to real-time info. No specific companies or investments mentioned.
+   - Chunk 2 (41bcc9438630e1ac3cd8::c0000, 2023-08-27): Mentions ""Solutions a leading AI powered software platform used by global manufacturers and retailers to plan their supply chains today announced that it w"". Incomplete sentence. No investor or specific AI tech name mentioned.
+   - Chunk 3 (d86748ec8a585ec8c3ec::c0000, 2023-09-19): Mentions ""This computer technology stock can add to its strong AI revenue from the second quarter into 2024 and 2025 Barclays says."" No specific company names, investors, or AI tech names.
+   - Chunk 4 (6ec376fffd2c56fef630::c0000, 2023-07-26): Mentions ""The company also announced new AI tools on Wednesday including a program for building more conversational customer-service agents technology access from the startup Cohere and a healthcare ..."". Mentions ""Cohere"" as a startup providing technology access. Doesn't explicitly state a major tech company invested in it, nor does it give a specific named AI technology developed by the invested company, nor dates for investment/AI development.
+
+3.  **Evaluate Evidence against Question:**
+   - The question asks for:
+     a) A company invested in by a major technology company.
+     b) That company developed a named AI technology.
+     c) Identify both relations and dates.
+   - The provided context lacks:
+     - Names of companies (except ""Solutions"" which is cut off, and ""Cohere"" which is mentioned as a startup providing tech access, not explicitly as an investee of a major tech company in this text).
+     - Investment relations.
+     - Named AI technologies developed by the company.
+     - Dates for these specific relations.
+   - The context is fragmented and does not contain the necessary information to answer the question.
+
+4.  **Formulate Response:**
+   - State clearly that the provided context does not contain sufficient information to identify the company, the investing major technology company, the named AI technology, or the relevant dates.
+   - Cite the chunks if needed, but mainly state insufficiency per instructions.
+   - Keep it concise.
+
+   Draft: Based on the supplied context, there is insufficient evidence to identify a company invested in by a major technology company, the named AI technology it developed, or the relevant dates. The provided excerpts mention general AI trends, a truncated reference to ""Solutions,"" and a startup named Cohere, but do not detail investment relations, specific AI technology names, or associated dates [chunk_id=c3abd66a20fd72dc538f::c0000, 41bcc9438630e1ac3cd8::c0000, d86748ec8a585ec8c3ec::c0000, 6ec376fffd2c56fef630::c0000]. Therefore, the question cannot be answered from the given text. 
+
+   Check constraints: ""Answer only from supplied context."" ""Be concise but complete."" ""Do not invent facts."" ""Cite provenance inline as [chunk_id=...] whenever possible."" ""If evidence is insufficient or conflicting, say so.""
+   All constraints met. The response directly addresses the insufficiency and cites the chunks. I will refine it to be strictly compliant.
+   One minor point: The prompt says ""Cite provenance inline as [chunk_id=...] whenever possible."" I'll just cite the chunks generally or note that none contain the info. I'll stick to the draft. It's accurate.
+   Final check of the context: It's clearly truncated/fragmented. No investment info. No named AI tech. No dates for relations. So ""insufficient evidence"" is the correct and only valid answer.
+   Proceed. 
+   Output matches draft.✅
+   Structure: Direct statement of insufficiency, brief explanation referencing context, citation. Concise. Meets all constraints.✅
+   Output Generation. 
+   ""Based on the supplied context, there is insufficient evidence to answer the question. The provided excerpts do not mention a specific company invested in by a major technology firm, a named AI technology developed by that company, or the dates associated with these relations [chunk_id=c3abd66a20fd72dc538f::c0000, 41bcc9438630e1ac3cd8::c0000, d86748ec8a585ec8c3ec::c0000, 6ec376fffd2c56fef630::c0000]."" -> This is good. Matches constraints.✅
+   One detail: The prompt says ""Cite provenance inline as [chunk_id=...] whenever possible."" I will format it exactly as requested.
+   All good. 
+   Output matches response. 
+   [Proceeds]
+   *(Self-Correction/Refinement during thought)*: I should make sure I strictly follow ""Cite provenance inline as [chunk_id=...]"". I'll just list them at the end or inline. The draft does this. It's fine.
+   Final Answer Generation. 
+   ""Based on the supplied context, there is insufficient evidence to identify the company, the investing major technology company, the named AI technology, or the relevant dates. The provided excerpts only contain fragmented references to general AI trends, a truncated mention of ""Solutions,"" and a startup named Cohere, without detailing any investment relations or specific AI technology developments [chunk_id=c3abd66a20fd72dc538f::c0000, 41bcc9438630e1ac3cd8::c0000, d86748ec8a585ec8c3ec::c0000, 6ec376fffd2c56fef630::c0000]."" -> Meets all criteria.✅
+   Output matches. 
+   [Done.] 
+   *Self-Correction/Verification during generation prep*: 
+   Check constraint: ""Answer only from supplied context."" -> Yes.
+   ""Be concise but complete."" -> Yes.
+   ""Do not invent facts."" -> Yes.
+   ""Cite provenance inline as [chunk_id=...] whenever possible."" -> Yes.
+   ""If evidence is insufficient or conflicting, say so."" -> Yes.
+   All good. Output matches response. 
+   Proceeds. 
+   [Output Generation] -> *See response.* 
+   *(Note: I will ensure the chunk IDs are formatted exactly as requested.)*
+   ""Based on the supplied context, there is insufficient evidence to answer the question. The provided excerpts do not identify a company invested in by a major technology firm, a named AI technology it developed, or the dates for these relations [chunk_id=c3abd66a20fd72dc538f::c0000, 41bcc9438630e1ac3cd8::c0000, d86748ec8a585ec8c3ec::c0000, 6ec376fffd2c56fef630::c0000]."" -> Perfect.✅
+   Output matches. 
+   [Done.] 
+   *(Final Output Generation)* -> *Proceeds.*
+</think>
+
+Based on the supplied context, there is insufficient evidence to answer the question. The provided excerpts do not identify a company invested in by a major technology firm, a named AI technology developed by that company, or the dates associated with these relations [chunk_id=c3abd66a20fd72dc538f::c0000, 41bcc9438630e1ac3cd8::c0000, d86748ec8a585ec8c3ec::c0000, 6ec376fffd2c56fef630::c0000].",TO_BE_FILLED_FROM_DATASET
+G05,cross-doc,Identify one technology connected to the same company in at least two news chunks and summarize how the relationship changed over time.,"<think>
+Here's a thinking process:
+
+1.  **Analyze User Input:**
+   - **Question:** Identify one technology connected to the same company in at least two news chunks and summarize how the relationship changed over time.
+   - **Constraints:** Answer only from supplied context. Be concise but complete. Do not invent facts. Cite provenance inline as [chunk_id=...] whenever possible. If evidence is insufficient or conflicting, say so.
+   - **Context Provided:** Four chunks with IDs, dates, scores, and short text snippets.
+     - Chunk 1 (951a3c9eb3e42ebee74e::c0000, 2023-04-24): Mentions partnership between Biz Technology Solutions (BTS) and New Charter Technologies. Enables BTS to offer wider range of expert services, access to advanced technologies, ability to scale.
+     - Chunk 2 (f60e106afd6fcee36b56::c0000, 2023-07-20): Mentions Zacks Technology Services industry, digitization, dependency on technology, diversify technology services.
+     - Chunk 3 (e286a68d2694750908bb::c0000, 2023-10-10): Mentions technology services sector, Thomson Reuters Corp (global media conglomerate offering trusted information/services to professionals, focusing on finance).
+     - Chunk 4 (2524fa44ed0cdb8a148b::c0000, 2023-09-08): Mentions Corning, News Corp, Market Talks covering Technology Media and Telecom.
+
+2.  **Evaluate Context against Question:**
+   - The question asks for *one technology* connected to the *same company* in *at least two news chunks*, and how the *relationship changed over time*.
+   - I need to scan the chunks for a company and a technology mentioned in at least two chunks.
+   - Chunk 1: BTS & New Charter Technologies (partnership, advanced technologies)
+   - Chunk 2: Zacks Technology Services industry (general industry mention)
+   - Chunk 3: Thomson Reuters Corp (technology services sector, finance focus)
+   - Chunk 4: Corning, News Corp (Technology Media and Telecom)
+   - There is no single company mentioned in two or more chunks. Each chunk mentions different companies/entities (BTS/New Charter, Zacks, Thomson Reuters, Corning/News Corp).
+   - There is no specific ""technology"" linked to a company across multiple chunks.
+   - Therefore, the evidence is insufficient to answer the question as stated.
+
+3.  **Formulate Response (adhering to constraints):**
+   - State clearly that the provided context does not contain a single company connected to a specific technology across at least two chunks.
+   - Cite the chunks to show what is actually present.
+   - Conclude that evidence is insufficient.
+   - Keep it concise.
+   - Follow constraint: ""If evidence is insufficient or conflicting, say so.""
+
+   Draft:
+   The provided context does not contain a single company connected to a specific technology across at least two news chunks. Each chunk references different entities: Biz Technology Solutions and New Charter Technologies [chunk_id=951a3c9eb3e42ebee74e::c0000], Zacks Technology Services [chunk_id=f60e106afd6fcee36b56::c0000], Thomson Reuters Corp [chunk_id=e286a68d2694750908bb::c0000], and Corning/News Corp [chunk_id=2524fa44ed0cdb8a148b::c0000]. Therefore, evidence is insufficient to identify a technology-company relationship or track how it changed over time. 
+
+4.  **Check Constraints:**
+   - Answer only from supplied context? Yes.
+   - Concise but complete? Yes.
+   - Do not invent facts? Yes.
+   - Cite provenance inline? Yes.
+   - If evidence insufficient, say so? Yes.
+   - Matches perfectly. Output matches draft.✅
+   - One minor thing: The prompt says ""Identify one technology connected to the same company in at least two news chunks..."". Since it's impossible, I will explicitly state the insufficiency as instructed. All good. 
+   - Proceed. 
+   - Output generation. 
+   - Self-Correction/Refinement during thought: I should make sure I strictly follow ""If evidence is insufficient or conflicting, say so."" I will state it directly. The draft does exactly that. No extra fluff. Ready. 
+   - Output matches the draft.✅
+   - Final Check of the prompt: ""Identify one technology connected to the same company in at least two news chunks and summarize how the relationship changed over time."" -> Context has 4 chunks, none share a company. So insufficient. All constraints met.✅
+   - Output generation. 
+   - [Done] 
+   - Output: The provided context does not contain a single company connected to a specific technology across at least two news chunks. Each chunk references different entities: Biz Technology Solutions and New Charter Technologies [chunk_id=951a3c9eb3e42ebee74e::c0000], Zacks Technology Services [chunk_id=f60e106afd6fcee36b56::c0000], Thomson Reuters Corp [chunk_id=e286a68d2694750908bb::c0000], and Corning/News Corp [chunk_id=2524fa44ed0cdb8a148b::c0000]. Therefore, evidence is insufficient to identify the requested technology-company relationship or track how it changed over time.✅
+   - Matches all constraints. Proceeds. 
+   - Output matches response. 
+   - [Final Check] The prompt asks to ""Identify one technology..."". I will state insufficiency clearly. All good. 
+   - Output Generation. 
+   - [Done]
+</think>
+
+The provided context does not contain a single company connected to a specific technology across at least two news chunks. Each chunk references different entities: Biz Technology Solutions and New Charter Technologies [chunk_id=951a3c9eb3e42ebee74e::c0000], Zacks Technology Services [chunk_id=f60e106afd6fcee36b56::c0000], Thomson Reuters Corp [chunk_id=e286a68d2694750908bb::c0000], and Corning/News Corp [chunk_id=2524fa44ed0cdb8a148b::c0000]. Therefore, evidence is insufficient to identify the requested technology-company relationship or summarize how it changed over time.",TO_BE_FILLED_FROM_DATASET
